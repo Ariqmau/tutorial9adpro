@@ -35,3 +35,9 @@ Spike pada chart mengindikasikan messages yang dikirim oleh publisher(2x run, 2 
 ### Simulation slow subscriber
 ![image](https://github.com/user-attachments/assets/f0ec928e-e5fa-421c-bdc3-c5627e0187c5)
 Puncak spike berada di 25 karena saya menjalankan `cargo run` publisher sebanyak 7x dan ada 5 pesan per run publisher, jadi ada 35 pesan. Namun, subscriber sudah menerima sebagian dari pesan tersebut jadi sisa yang belum sempat diproses pada titik tertinggi adalah 25.
+
+### Reflection and Running at least three subscribers
+![image](https://github.com/user-attachments/assets/230af9ec-c3c0-4610-be18-e85107074a11)
+Bisa terlihat event processing displit menggunakan 3 console(kiri bawah, dan kanan atas bawah)
+![image](https://github.com/user-attachments/assets/6fdc1ca3-b7af-4fde-bcf0-a8f5dda46dfc)
+Spike maksimal hanya 13 pesan dibanding 25 pesan pada queue tadi. Ini bisa terjadi karena dengan 3 console yang terbuka, pemrosesan queue pesan akan displit pada 3 console/subscriber tersebut. Sebelumnya, hanya satu subscriber (console) yang aktif. Maka semua pesan dari publisher masuk ke satu subscriber secara berurutan yang membatasi throughput karena pemrosesan dilakukan satu per satu. Sekarang ada tiga subscriber (console) secara bersamaan dan RabbitMQ melakukan load balancing otomatis antar subscriber yang menyebabkan pesan tersebar merata, dan tidak semua numpuk di satu antrian subscriber.
