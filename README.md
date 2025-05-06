@@ -19,4 +19,15 @@ Pada function main di `publisher/main.rs` ada 5 data yang akan dikirim dengan se
 b. The url of: “amqp://guest:guest@localhost:5672” is the same as in the subscriber
 program, what does it mean?
 
-Berarti publisher dan subscriber berbicara dengan broker yang sama, sehingga pesan yang dikirim publisher bisa diterima oleh subscriber melalui antrian yang sama. 
+Berarti publisher dan subscriber berbicara dengan broker yang sama, sehingga pesan yang dikirim publisher bisa diterima oleh subscriber melalui antrian yang sama.
+
+### Running RabbitMQ as message broker
+![image](https://github.com/user-attachments/assets/064c2a61-5eb5-40ec-bf82-fc53fa99c5ac)
+
+### Sending and processing event
+![image](https://github.com/user-attachments/assets/16a68b26-dce3-42db-8a14-79d11d74e5b0)
+Panel kiri(publisher) mengirim 5 data setiap kali run(2x run), dan panel kanan(subscriber) menerima dan memproses data yang dikirim.
+
+### Monitoring chart based on publisher
+![image](https://github.com/user-attachments/assets/122ca0e7-d341-46ba-88fd-f173f343dd4c)
+Spike pada chart mengindikasikan messages yang dikirim oleh publisher(2x run, 2 spike)
