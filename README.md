@@ -26,3 +26,8 @@ Berarti publisher dan subscriber berbicara dengan broker yang sama, sehingga pes
 
 ### Sending and processing event
 ![image](https://github.com/user-attachments/assets/e6d64220-850b-4042-a523-9cd806f6a359)
+Panel kiri(publisher) mengirim 5 data setiap kali run(2x run), dan panel kanan(subscriber) menerima dan memproses data yang dikirim.
+
+### Monitoring chart based on publisher
+![image](https://github.com/user-attachments/assets/122ca0e7-d341-46ba-88fd-f173f343dd4c)
+Spike pada chart mengindikasikan messages yang dikirim oleh publisher(2x run, 2 spike)
