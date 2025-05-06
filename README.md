@@ -31,3 +31,7 @@ Panel kiri(publisher) mengirim 5 data setiap kali run(2x run), dan panel kanan(s
 ### Monitoring chart based on publisher
 ![image](https://github.com/user-attachments/assets/122ca0e7-d341-46ba-88fd-f173f343dd4c)
 Spike pada chart mengindikasikan messages yang dikirim oleh publisher(2x run, 2 spike)
+
+### Simulation slow subscriber
+![image](https://github.com/user-attachments/assets/f0ec928e-e5fa-421c-bdc3-c5627e0187c5)
+Puncak spike berada di 25 karena saya menjalankan `cargo run` publisher sebanyak 7x dan ada 5 pesan per run publisher, jadi ada 35 pesan. Namun, subscriber sudah menerima sebagian dari pesan tersebut jadi sisa yang belum sempat diproses pada titik tertinggi adalah 25.
