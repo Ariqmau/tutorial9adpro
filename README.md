@@ -23,3 +23,6 @@ Berarti publisher dan subscriber berbicara dengan broker yang sama, sehingga pes
 
 ### Running RabbitMQ as message broker
 ![image](https://github.com/user-attachments/assets/064c2a61-5eb5-40ec-bf82-fc53fa99c5ac)
+
+### Sending and processing event
+![image](https://github.com/user-attachments/assets/e6d64220-850b-4042-a523-9cd806f6a359)
